@@ -15,7 +15,7 @@ const NoteGrid = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/getnotes');
+        const response = await axios.get('https://mini-newsapp-1.onrender.com/getnotes');
         setNotes(response.data);
       } catch (err) {
         setError(err.message);
@@ -36,7 +36,7 @@ const NoteGrid = () => {
     if (window.confirm('Are you sure you want to delete this note?')) {
       try {
         setDeletingId(noteId);
-        await axios.delete(`http://localhost:5000/deletnote/${noteId}`);
+        await axios.delete(`https://mini-newsapp-1.onrender.com/deletnote/${noteId}`);
         setNotes(notes.filter(note => note._id !== noteId));
       } catch (err) {
         setError('Failed to delete note');
