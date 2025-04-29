@@ -27,7 +27,7 @@ const CreateNoteModal = ({ isOpen, onClose, onCreate }) => {
 
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5000/notes', {
+      const { data } = await axios.post('https://mini-newsapp-1.onrender.com/notes', {
         title,
         content,
         tags,
